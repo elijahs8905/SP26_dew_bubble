@@ -73,6 +73,8 @@ def _():
 def _(get_antoine_coefficient):
     propane_example = get_antoine_coefficient('propane', 350)
     propane_example
+    toluene_example = get_antoine_coefficient('toluene', 350)
+    toluene_example
     return
 
 
@@ -97,6 +99,8 @@ def _(fsolve, get_antoine_coefficient, np, plt, raoult_law_kvalue):
         K = raoult_law_kvalue(T, P, antoineCoefs)
         y = K * z
         y_prop.append(y[0])
+    print('The temperature range for propane is from {0} K to {1} K'.format(propane[3], propane[4]))
+    print('The temperature range for toluene is from {0} K to {1} K'.format(toluene[3], toluene[4]))
     plt.plot(y_prop, T_soln, label='Y_prop')
     plt.plot(x_prop, T_soln, label='X_prop')
     plt.xlabel('$x_{prop}$, $y_{prop}$')
