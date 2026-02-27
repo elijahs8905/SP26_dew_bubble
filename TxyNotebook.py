@@ -75,6 +75,16 @@ def _(get_antoine_coefficient):
     propane_example
     return
 
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    <div style="text-align: center">
+    <b><font size=6>Mari's Edit to the Code
+        </font></b>
+    </div>
+    """)
+    return
+
 
 @app.cell
 def _(fsolve, get_antoine_coefficient, np, plt, raoult_law_kvalue):
