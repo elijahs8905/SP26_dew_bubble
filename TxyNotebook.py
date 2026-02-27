@@ -1,6 +1,19 @@
+# /// script
+# requires-python = ">=3.14"
+# dependencies = [
+#     "beautifulsoup4>=4.14.3",
+#     "marimo>=0.20.2",
+#     "matplotlib>=3.10.8",
+#     "numpy>=2.4.2",
+#     "pyzmq>=27.1.0",
+#     "requests>=2.32.5",
+#     "scipy>=1.17.1",
+# ]
+# ///
+
 import marimo
 
-__generated_with = "0.19.11"
+__generated_with = "0.20.2"
 app = marimo.App()
 
 
@@ -71,7 +84,7 @@ def _():
 
 @app.cell
 def _(get_antoine_coefficient):
-    propane_example = get_antoine_coefficient('propane', 350)
+    propane_example = get_antoine_coefficient('benzene', 350)
     propane_example
     return
 
@@ -80,7 +93,7 @@ def _(get_antoine_coefficient):
 def _(fsolve, get_antoine_coefficient, np, plt, raoult_law_kvalue):
     P = 1.01325  # Pressure in bar
     Tguess = 350  # K
-    propane = get_antoine_coefficient('propane', Tguess)
+    propane = get_antoine_coefficient('benzene', Tguess)
     toluene = get_antoine_coefficient('toluene', Tguess)
     antoineCoefs = np.array([propane[0:3], toluene[0:3]])
     T_soln = []
