@@ -84,7 +84,7 @@ def _():
 
 @app.cell
 def _(get_antoine_coefficient):
-    propane_example = get_antoine_coefficient('toluene', 350)
+    propane_example = get_antoine_coefficient('benzene', 350)
     propane_example
     return
 
@@ -93,7 +93,7 @@ def _(get_antoine_coefficient):
 def _(fsolve, get_antoine_coefficient, np, plt, raoult_law_kvalue):
     P = 1.01325  # Pressure in bar
     Tguess = 350  # K
-    propane = get_antoine_coefficient('propane', Tguess)
+    propane = get_antoine_coefficient('benzene', Tguess)
     toluene = get_antoine_coefficient('toluene', Tguess)
     antoineCoefs = np.array([propane[0:3], toluene[0:3]])
     T_soln = []
