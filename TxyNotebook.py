@@ -1,6 +1,19 @@
+# /// script
+# requires-python = ">=3.14"
+# dependencies = [
+#     "beautifulsoup4>=4.14.3",
+#     "marimo>=0.20.2",
+#     "matplotlib>=3.10.8",
+#     "numpy>=2.4.2",
+#     "pyzmq>=27.1.0",
+#     "requests>=2.32.5",
+#     "scipy>=1.17.1",
+# ]
+# ///
+
 import marimo
 
-__generated_with = "0.19.11"
+__generated_with = "0.20.2"
 app = marimo.App()
 
 
@@ -71,7 +84,7 @@ def _():
 
 @app.cell
 def _(get_antoine_coefficient):
-    propane_example = get_antoine_coefficient('propane', 350)
+    propane_example = get_antoine_coefficient('toluene', 350)
     propane_example
     return
 
